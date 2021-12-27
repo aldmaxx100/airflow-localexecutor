@@ -1,0 +1,20 @@
+version: '3'
+services:
+  postgresource:
+    image: aldrinmac/postgres-airflow:latest
+    env_file:
+      - postgres.env
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - /path/to/postgres/data:/var/lib/postgresql/data
+  airflow:
+    image: aldrinmac/airflow-localexecutor:latest
+    env_file:
+      - airflow.env
+    ports:
+      - "5884:8080"
+    depends_on:
+      - postgresource
