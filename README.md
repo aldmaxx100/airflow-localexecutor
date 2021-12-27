@@ -2,7 +2,7 @@
 
 Prod ready airflow image in localexecutor mode.
 
-Running the app.
+## Running the app.
 
 Airflow localexecutor mode requires a backend db to function. Thus a postgres source db has been used in app.
 
@@ -24,7 +24,7 @@ After setting the initial values,
 To run the image, head to entrypoint folder and hit:
 >> docker-compose up -D
 
-How to add dags.
+## How to add dags.
 
 Initially dags location default to /root/airflow/dags (/root/airflow is airflow home)
 
