@@ -20,6 +20,11 @@ Now edit airflow.env and fill in this important env.
 
 The password here is same value you set for env POSTGRES_PASSWORD in postgres.env while host value would be service name in our docker-compose(postgresource in example).
 
+Now head over to docker-compose.yml file and edit path to mount data from local for postgres db to persist in postgresource service. This ensures that dags run history persist after app restart.
+Simply change, "/path/to/postgres/data"
+  
+Here you may also mount your scripts/github into airflow image in same way.
+
 After setting the initial values, 
 To run the image, head to entrypoint folder and hit:
 >> docker-compose up -D
